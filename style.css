@@ -1,0 +1,99 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #0d0d2b, #1d1d5b);
+  color: white;
+  text-align: center;
+}
+header {
+  background: #111144;
+  padding: 20px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 10px;
+  padding: 5px 10px;
+}
+nav a:hover {
+  background: #333399;
+  border-radius: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+input, textarea, button {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+button:hover {
+  background: #5555ff;
+  color: white;
+  cursor: pointer;
+}
+#content {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+#content {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  opacity: 1;
+  filter: blur(0px);
+}
+/* Styling for the images to have rounded corners */
+img.event-image {
+  border-radius: 15px;  /* Adjust the radius as needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;  /* Ensure image doesn't overflow */
+  height: auto;
+}
+
+/* Hover effect for zoom */
+img.event-image:hover {
+  transform: scale(1.05);  /* Slight zoom effect on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Optional shadow */
+}
+
+@font-face {
+  font-family: 'DIN Black';
+  src: url('../fonts/din-black.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Bold';
+  src: url('../fonts/din-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Medium';
+  src: url('../fonts/din-medium.ttf') format('truetype');
+  font-weight: 500; /* or use normal if preferred */
+  font-style: normal;
+}
+
+/* If you want to use the general din.ttf as a fallback for example */
+@font-face {
+  font-family: 'DIN';
+  src: url('../fonts/din.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  /* If you want DIN Medium as your base font: */
+  font-family: 'DIN Medium', 'DIN', sans-serif;
+}
+
+/* For headings you might use DIN Bold or DIN Black */
+h1, h2, h3 {
+  font-family: 'DIN Bold', 'DIN Black', sans-serif;
+}

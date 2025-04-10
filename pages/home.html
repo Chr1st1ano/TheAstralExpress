@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Astral Express</title>
+    <!-- Bootstrap CSS (v5) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(to bottom, #0d0d2b, #1d1d5b);
+        font-family: 'Orbitron', sans-serif;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        margin-top: 50px;
+      }
+      h2 {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        color: #ffc107;
+      }
+      .card-body {
+        text-align: center;
+        position: relative; /* For absolute positioning of description overlay */
+      }
+      .card-title {
+        font-size: 1.25rem;
+        color: #ffc107;
+      }
+      /* Initially hide the description text */
+      .card-text {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0 10px;
+        font-size: 0.95rem;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      /* On card hover, reveal the description text */
+      .card:hover .card-text {
+        opacity: 1;
+      }
+      /* Rounded images with a hover scale effect */
+      .card-img-top {
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .card-img-top:hover {
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Astral Express!</h1>
+
+    <hr class="my-5" style="border-color: #ffc107;" />
+
+    <h2 class="text-warning fw-bold text-center mb-4">
+      ☕ Recommended Brews from the Astral Café
+    </h2>
+
+    <div class="container">
+      <div class="row text-light">
+        <!-- Brew Card 1: Wake and Slumber -->
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark h-100 shadow border-warning">
+            <img src="images/w&s.png" class="card-img-top" alt="Wake and Slumber Brew" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Wake and Slumber</h5>
+              <p class="card-text">A brew to transition between dreams and reality.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brew Card 2: Glimmering Dreamscape -->
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark h-100 shadow border-info">
+            <img src="images/glimmerdream.png" class="card-img-top" alt="Glimmering Dreamscape Brew" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+              <h5 class="card-title text-info">Glimmering Dreamscape</h5>
+              <p class="card-text">A coffee that captures celestial visions in every sip.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brew Card 3: Let's Be Real -->
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark h-100 shadow border-danger">
+            <img src="images/bereal.png" class="card-img-top" alt="Let's Be Real Brew" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+              <h5 class="card-title text-danger">Let's Be Real</h5>
+              <p class="card-text">An honest blend that speaks to the heart of the cosmos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Modal for Zooming Images -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+          <div class="modal-header border-0">
+            <h5 class="modal-title text-warning" id="imageModalLabel">Zoomed Image</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="" alt="Zoomed Brew" id="zoomedImage" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script to load the clicked image into the modal -->
+    <script>
+      // Attach event listeners to all brew images for zoom
+      const brewImages = document.querySelectorAll('.card-img-top');
+      const zoomedImage = document.getElementById('zoomedImage');
+
+      brewImages.forEach((img) => {
+        img.addEventListener('click', function() {
+          // Set the src of the modal image to the clicked image's src
+          zoomedImage.src = this.src;
+        });
+      });
+    </script>
+  </body>
+</html>
